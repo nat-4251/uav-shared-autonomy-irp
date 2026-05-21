@@ -56,11 +56,17 @@ To comply with Singapore government restrictions on UAV:
 
 # Methodology
 This project is split into 5 parts, namely:
+
 Part A: Aircraft construction and baseline flight testing
+
 Part B: Integrate INAV flight stabilisation
+
 Part C: Telemetry data collection under varied pilot inputs,
+
 Part D: Training of pilot instability model,
+
 Part E: Data collection on platform with model installed,
+
 Part F: Comparative analysis using stability metrics.
 
 
