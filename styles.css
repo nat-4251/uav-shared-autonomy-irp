@@ -1,13 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #0b1220; 
+    font-family: "Segoe UI", "Inter", "Helvetica Neue", sans-serif;
+    background: #0b1220;
     color: #e5e7eb;
 }
+
+/* BACKGROUND */
 body.home {
     background: linear-gradient(
-        rgba(11, 18, 32, 0.75),
-        rgba(11, 18, 32, 0.85)
+        rgba(11, 18, 32, 0.78),
+        rgba(11, 18, 32, 0.92)
     ),
     url("sunrise_background_image.jpg");
 
@@ -16,46 +18,115 @@ body.home {
     background-attachment: fixed;
 }
 
+/* NAV */
 nav {
-    background: #0f1b33; 
+    background: rgba(15, 27, 51, 0.85);
+    backdrop-filter: blur(10px);
     padding: 15px;
     border-bottom: 1px solid #1f2a44;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
     color: #93c5fd;
     margin-right: 15px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 nav a:hover {
-    color: #ffffff;
+    color: white;
 }
 
+/* LAYOUT */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
-    padding: 30px;
+    padding: 40px 20px;
 }
 
+/* TITLE */
+h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #bfdbfe;
+}
+
+/* BASE CARD */
 .card {
-    background: #111c33; 
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    border: 1px solid #1f2a44;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    padding: 22px;
+    margin: 25px 0;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
 }
 
-h1, h2, h3 {
-    color: #bfdbfe; 
+@keyframes fadeUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-pre {
-    background: #0a1020;
-    padding: 10px;
-    border-radius: 8px;
+/* GRADIENT VARIANTS */
+.card.blue {
+    background: linear-gradient(135deg, #1e3a8a, #0b1220);
+}
+
+.card.purple {
+    background: linear-gradient(135deg, #312e81, #0b1220);
+}
+
+.card.teal {
+    background: linear-gradient(135deg, #0f766e, #0b1220);
+}
+
+/* HEADINGS */
+h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #e0f2fe;
+}
+
+h3 {
+    color: #93c5fd;
+}
+
+/* TEXT */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* SWIPE CARDS (HORIZONTAL SCROLL SECTION) */
+.scroll-row {
+    display: flex;
+    gap: 20px;
     overflow-x: auto;
-    border: 1px solid #1f2a44;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-row::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-card {
+    min-width: 320px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.scroll-card:hover {
+    transform: scale(1.03);
 }
