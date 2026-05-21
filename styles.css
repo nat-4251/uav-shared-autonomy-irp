@@ -1,18 +1,16 @@
 body {
     margin: 0;
-    font-family: "Segoe UI", "Inter", "Helvetica Neue", sans-serif;
-    background: #0b1220;
+    font-family: "Segoe UI", "Inter", sans-serif;
+    background: #050914;
     color: #e5e7eb;
+    overflow-x: hidden;
 }
 
-/* BACKGROUND */
+/* Background */
 body.home {
-    background: linear-gradient(
-        rgba(11, 18, 32, 0.78),
-        rgba(11, 18, 32, 0.92)
-    ),
-    url("sunrise_background_image.jpg");
-
+    background:
+        linear-gradient(rgba(5, 9, 20, 0.75), rgba(5, 9, 20, 0.95)),
+        url("sunrise_background_image.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,13 +18,14 @@ body.home {
 
 /* NAV */
 nav {
-    background: rgba(15, 27, 51, 0.85);
-    backdrop-filter: blur(10px);
-    padding: 15px;
-    border-bottom: 1px solid #1f2a44;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(10, 16, 32, 0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 20px;
 }
 
 nav a {
@@ -42,78 +41,79 @@ nav a:hover {
 
 /* LAYOUT */
 .container {
+    margin-top: 80px;
     max-width: 1000px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 40px 20px;
 }
 
-/* TITLE */
-h1 {
-    font-size: 42px;
-    letter-spacing: 1px;
+/* HERO TITLE */
+.hero {
+    font-size: 3rem;
+    font-weight: 800;
     text-align: center;
     margin-bottom: 40px;
-    color: #bfdbfe;
+    background: linear-gradient(90deg, #93c5fd, #60a5fa, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeUp 1s ease-out;
 }
 
-/* BASE CARD */
+/* SECTION BASE */
+.section {
+    margin: 60px 0;
+}
+
+/* GLASS CARD BASE */
 .card {
-    padding: 22px;
-    margin: 25px 0;
+    padding: 25px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(8px);
-
-    transform: translateY(20px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    backdrop-filter: blur(12px);
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
 }
 
-@keyframes fadeUp {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* reveal animation */
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* GRADIENT VARIANTS */
 .card.blue {
-    background: linear-gradient(135deg, #1e3a8a, #0b1220);
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
 }
 
 .card.purple {
-    background: linear-gradient(135deg, #312e81, #0b1220);
+    background: linear-gradient(135deg, #312e81, #0f172a);
 }
 
-.card.teal {
-    background: linear-gradient(135deg, #0f766e, #0b1220);
-}
-
-/* HEADINGS */
-h2 {
-    font-size: 26px;
-    margin-bottom: 10px;
-    color: #e0f2fe;
-}
-
-h3 {
-    color: #93c5fd;
+.card.cyan {
+    background: linear-gradient(135deg, #155e75, #0f172a);
 }
 
 /* TEXT */
-p {
-    font-size: 16px;
-    line-height: 1.6;
+h1, h2 {
+    margin-top: 0;
+    color: #bfdbfe;
 }
 
-/* SWIPE CARDS (HORIZONTAL SCROLL SECTION) */
+p {
+    line-height: 1.6;
+    color: #e5e7eb;
+}
+
+/* HORIZONTAL SWIPE SECTION */
 .scroll-row {
     display: flex;
-    gap: 20px;
     overflow-x: auto;
-    padding-bottom: 10px;
     scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 10px;
 }
 
 .scroll-row::-webkit-scrollbar {
@@ -121,12 +121,18 @@ p {
 }
 
 .scroll-card {
-    min-width: 320px;
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    min-width: 85%;
+    scroll-snap-align: center;
 }
 
-.scroll-card:hover {
-    transform: scale(1.03);
+/* FADE IN */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
