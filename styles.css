@@ -4,6 +4,17 @@ body {
     background: #0b1220; 
     color: #e5e7eb;
 }
+body.home {
+    background: linear-gradient(
+        rgba(11, 18, 32, 0.75),
+        rgba(11, 18, 32, 0.85)
+    ),
+    url("sunrise_background_image.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
 nav {
     background: #0f1b33; 
