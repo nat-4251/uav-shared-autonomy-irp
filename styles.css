@@ -122,6 +122,19 @@ nav a:hover {
 
     animation: fadeIn 2s ease;
 }
+.hero-subtitle-acronym {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    animation: fadeIn 1.6s ease;
+}
 
 .scroll-indicator {
     margin-top: 80px;
@@ -535,6 +548,11 @@ nav a:hover {
 
 
 <script>
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 10);
+});
 
 const reveals = document.querySelectorAll('.reveal');
 
