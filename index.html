@@ -16,56 +16,91 @@
 
 <div class="container">
 
-<!-- TITLE -->
-<h1>Adaptive Shared-Control Framework for Fixed-Wing UAVs</h1>
-
-<!-- DESCRIPTION -->
-<div class="scroll-row">
-
-    <div class="card blue scroll-card">
-        <h2>Description</h2>
-        <p>
-        A telemetry-driven system investigating adaptive control authority scaling for novice fixed-wing UAV pilots using real-world flight data.
-        </p>
+    <!-- HERO -->
+    <div class="hero">
+        Adaptive Shared Control Framework for Fixed-wing UAVs
     </div>
 
-    <div class="card purple scroll-card">
-        <h2>Objective</h2>
-        <p>
-        To reduce crash rate and improve flight stability during early-stage RC aircraft training by dynamically adjusting control sensitivity based on pilot behaviour.
-        </p>
+    <!-- DESCRIPTION + OBJECTIVE (SWIPE STYLE) -->
+    <div class="section scroll-row">
+
+        <div class="card blue scroll-card">
+            <h2>Project Description</h2>
+            <p>
+                A telemetry-driven system investigating adaptive control authority scaling for novice fixed-wing UAV pilots using real-world flight data.
+            </p>
+        </div>
+
+        <div class="card purple scroll-card">
+            <h2>Objective</h2>
+            <p>
+                To reduce crash rate and improve flight stability during early-stage RC aircraft training by dynamically adjusting control sensitivity based on pilot behaviour.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- RESEARCH QUESTION -->
+    <div class="section">
+        <div class="card cyan">
+            <h2>Big Question</h2>
+            <p>
+                How effectively can pilot instability be inferred from low-cost UAV telemetry and used to improve flight stability while preserving pilot intent in novice-operated flights?
+            </p>
+        </div>
+    </div>
+
+    <!-- SYSTEM -->
+    <div class="section">
+        <div class="card blue">
+            <h2>System Architecture</h2>
+            <pre>
+Pilot Input
+    ↓
+AI Instability Estimation (PII)
+    ↓
+Authority Scaling Layer
+    ↓
+INAV Flight Controller
+    ↓
+Aircraft
+            </pre>
+        </div>
+    </div>
+
+    <!-- METRICS -->
+    <div class="section">
+        <div class="card purple">
+            <h2>Parameters of Success</h2>
+            <ul>
+                <li>Reduction in crash rate</li>
+                <li>Reduction in roll oscillation</li>
+                <li>Stability improvement (variance of attitude)</li>
+                <li>Reduction in pilot overcorrection frequency</li>
+                <li>Consistency of controlled turns under AI assistance</li>
+            </ul>
+        </div>
     </div>
 
 </div>
 
-<!-- RESEARCH QUESTION -->
-<div class="card teal">
-    <h2>The Big Question</h2>
-    <p>
-    How effectively can pilot instability be inferred from low-cost UAV telemetry and used to improve flight stability while preserving pilot intent in novice-operated flights?
-    </p>
-</div>
+<script>
+const cards = document.querySelectorAll('.card');
 
-<!-- EVALUATION METRICS -->
-<div class="card blue">
-    <h2>Parameters for Success</h2>
-    <ul>
-        <li>Reduction in crash frequency during training flights</li>
-        <li>Decrease in roll/pitch oscillation variance</li>
-        <li>Improved stability during pilot correction events</li>
-        <li>Consistency of control under different pilot skill levels</li>
-        <li>Responsiveness vs safety tradeoff efficiency</li>
-    </ul>
-</div>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.15
+});
 
-<!-- FOOTER -->
-<div class="card purple">
-    <p>
-    Independent research on human-in-the-loop adaptive control systems for fixed-wing UAV platforms.
-    </p>
-</div>
-
-</div>
+cards.forEach(card => {
+    observer.observe(card);
+});
+</script>
 
 </body>
 </html>
