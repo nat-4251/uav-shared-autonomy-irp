@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CHALANT | System Architecture</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="home">
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="system.html">System</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="progress.html">Progress</a>
+
+    </nav>
+
+
+    <div class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-title">
+                    SYSTEM
+                </div>
+
+                <div class="hero-subtitle-acronym">
+                    Internal architecture of the CHALANT adaptive shared-control UAV framework.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SYSTEM OVERVIEW -->
+        <section class="section">
+
+            <div class="section-title">
+                Architecture Overview
+            </div>
+
+            <div class="system-highlight reveal">
+
+                CHALANT operates using a
+                <span>human-in-the-loop adaptive stabilization framework</span>
+                that selectively modifies aircraft control authority based on inferred pilot instability.
+
+            </div>
+
+        </section>
+
+
+        <!-- CORE COMPONENTS -->
+        <section class="section">
+
+            <div class="section-title">
+                Core Components
+            </div>
+
+            <div class="system-grid">
+
+                <!-- CARD -->
+                <div class="system-card reveal">
+
+                    <h2>Pilot Input Layer</h2>
+
+                    <p>
+                        Manual pilot commands are transmitted through the radio control system and interpreted as the primary expression of pilot intent.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD -->
+                <div class="system-card reveal">
+
+                    <h2>Telemetry Collection</h2>
+
+                    <p>
+                        Flight telemetry including roll angle, pitch angle, stick reversal frequency and control oscillations are logged for behavioural analysis.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD -->
+                <div class="system-card reveal">
+
+                    <h2>Instability Estimation</h2>
+
+                    <p>
+                        The system estimates pilot instability using telemetry-derived behavioural indicators associated with overcorrection and unstable flight handling.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD -->
+                <div class="system-card reveal">
+
+                    <h2>Adaptive Authority Scaling</h2>
+
+                    <p>
+                        Aircraft control sensitivity is dynamically modified to suppress unstable inputs while preserving deliberate pilot maneuvers.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD -->
+                <div class="system-card reveal">
+
+                    <h2>INAV Flight Controller</h2>
+
+                    <p>
+                        The Matek F405-Wing V2 flight controller executes stabilization and aircraft control using sensor fusion and assisted flight logic.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD -->
+                <div class="system-card reveal">
+
+                    <h2>Fixed-Wing Aircraft Platform</h2>
+
+                    <p>
+                        The foam fixed-wing UAV serves as the physical experimental platform for telemetry collection and real-world validation flights.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FLOW -->
+        <section class="section">
+
+            <div class="section-title">
+                Control Flow
+            </div>
+
+            <div class="architecture-flow reveal">
+
+                <div class="flow-step">
+                    <div class="flow-number">01</div>
+                    Pilot issues manual control input
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-number">02</div>
+                    Receiver transmits control signals to flight controller
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-number">03</div>
+                    Telemetry data is continuously monitored
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-number">04</div>
+                    Instability estimation evaluates pilot behaviour
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-number">05</div>
+                    Authority scaling selectively modifies control response
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-number">06</div>
+                    Stabilized commands are executed by the aircraft
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <section
+            class="section"
+            style="
+                padding-top: 60px;
+                padding-bottom: 100px;
+            "
+        >
+
+            <div style="
+                text-align: center;
+                color: rgba(255,255,255,0.42);
+                font-size: 0.95rem;
+                line-height: 1.9;
+            ">
+
+                CHALANT · Cooperative Human–AI Learning Architecture for Novice Training
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- SCROLL SCRIPT -->
+    <script>
+
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 10);
+        });
+
+        const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+        reveals.forEach(el => observer.observe(el));
+
+    </script>
+
+</body>
+</html>
