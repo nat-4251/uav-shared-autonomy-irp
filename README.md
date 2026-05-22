@@ -133,3 +133,6 @@ Part F: Comparative analysis using stability metrics.
 - Formalised Pilot Instability Score (PIS) concept as a continuous variable derived from telemetry features such as control input variance and angular oscillation behaviour.
 - Defined evaluation metrics including crash rate reduction, roll variance reduction, and oscillation frequency reduction.
 - Organised project into phased methodology covering airframe construction, flight testing, telemetry collection, model training, and comparative evaluation.
+
+**(2026-05-22)**
+- Developed the preliminary web interface and research presentation framework, including interactive architectural visualization, telemetry-system documentation layouts and technical project communication infrastructure.
