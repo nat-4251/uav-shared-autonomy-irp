@@ -6,15 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CHALANT | System Architecture</title>
+    <title>CHALANT | System</title>
 
     <link rel="stylesheet" href="styles.css">
 
 </head>
 
-<body class="home">
+<body class="system-page">
 
-    <!-- NAVIGATION -->
+    <!-- NAV -->
     <nav>
 
         <a href="index.html">Home</a>
@@ -45,100 +45,93 @@
         </section>
 
 
-        <!-- SYSTEM OVERVIEW -->
+        <!-- OVERVIEW -->
         <section class="section">
 
             <div class="section-title">
                 Architecture Overview
             </div>
 
-            <div class="system-highlight reveal">
+            <div class="overview-box reveal">
 
-                CHALANT operates using a
-                <span>human-in-the-loop adaptive stabilization framework</span>
-                that selectively modifies aircraft control authority based on inferred pilot instability.
+                <p>
+                    CHALANT operates using a human-in-the-loop adaptive stabilization framework that dynamically modifies aircraft control authority based on inferred pilot instability. The system preserves intentional pilot maneuvers while selectively suppressing unstable or excessive control behaviour using telemetry-derived behavioural analysis.
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- CORE COMPONENTS -->
+        <!-- COMPONENTS -->
         <section class="section">
 
             <div class="section-title">
                 Core Components
             </div>
 
-            <div class="system-grid">
+            <div class="component-grid">
 
-                <!-- CARD -->
-                <div class="system-card reveal">
+                <div class="component-card reveal">
+
+                    <div class="component-number">01</div>
 
                     <h2>Pilot Input Layer</h2>
 
                     <p>
-                        Manual pilot commands are transmitted through the radio control system and interpreted as the primary expression of pilot intent.
+                        Manual control commands are interpreted as the primary representation of pilot intent.
                     </p>
 
                 </div>
 
 
-                <!-- CARD -->
-                <div class="system-card reveal">
+                <div class="component-card reveal">
+
+                    <div class="component-number">02</div>
 
                     <h2>Telemetry Collection</h2>
 
                     <p>
-                        Flight telemetry including roll angle, pitch angle, stick reversal frequency and control oscillations are logged for behavioural analysis.
+                        Aircraft telemetry including roll, pitch and control oscillation behaviour is continuously monitored.
                     </p>
 
                 </div>
 
 
-                <!-- CARD -->
-                <div class="system-card reveal">
+                <div class="component-card reveal">
+
+                    <div class="component-number">03</div>
 
                     <h2>Instability Estimation</h2>
 
                     <p>
-                        The system estimates pilot instability using telemetry-derived behavioural indicators associated with overcorrection and unstable flight handling.
+                        Behavioural indicators are used to infer pilot instability and overcorrection tendencies.
                     </p>
 
                 </div>
 
 
-                <!-- CARD -->
-                <div class="system-card reveal">
+                <div class="component-card reveal">
 
-                    <h2>Adaptive Authority Scaling</h2>
+                    <div class="component-number">04</div>
+
+                    <h2>Authority Scaling</h2>
 
                     <p>
-                        Aircraft control sensitivity is dynamically modified to suppress unstable inputs while preserving deliberate pilot maneuvers.
+                        Control authority is dynamically modified to stabilize aircraft behaviour without overriding intent.
                     </p>
 
                 </div>
 
 
-                <!-- CARD -->
-                <div class="system-card reveal">
+                <div class="component-card reveal">
 
-                    <h2>INAV Flight Controller</h2>
+                    <div class="component-number">05</div>
 
-                    <p>
-                        The Matek F405-Wing V2 flight controller executes stabilization and aircraft control using sensor fusion and assisted flight logic.
-                    </p>
-
-                </div>
-
-
-                <!-- CARD -->
-                <div class="system-card reveal">
-
-                    <h2>Fixed-Wing Aircraft Platform</h2>
+                    <h2>Flight Execution</h2>
 
                     <p>
-                        The foam fixed-wing UAV serves as the physical experimental platform for telemetry collection and real-world validation flights.
+                        Stabilized commands are executed through the INAV flight controller and fixed-wing UAV platform.
                     </p>
 
                 </div>
@@ -148,43 +141,78 @@
         </section>
 
 
-        <!-- FLOW -->
+        <!-- CONTROL FLOW -->
         <section class="section">
 
             <div class="section-title">
                 Control Flow
             </div>
 
-            <div class="architecture-flow reveal">
+            <div class="flow-grid">
 
-                <div class="flow-step">
-                    <div class="flow-number">01</div>
-                    Pilot issues manual control input
+                <div class="flow-card reveal">
+
+                    <h2>01</h2>
+
+                    <p>
+                        Pilot performs manual control input through transmitter.
+                    </p>
+
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-number">02</div>
-                    Receiver transmits control signals to flight controller
+
+                <div class="flow-card reveal">
+
+                    <h2>02</h2>
+
+                    <p>
+                        Receiver transmits pilot commands to the flight controller.
+                    </p>
+
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-number">03</div>
-                    Telemetry data is continuously monitored
+
+                <div class="flow-card reveal">
+
+                    <h2>03</h2>
+
+                    <p>
+                        Flight telemetry is collected continuously during operation.
+                    </p>
+
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-number">04</div>
-                    Instability estimation evaluates pilot behaviour
+
+                <div class="flow-card reveal">
+
+                    <h2>04</h2>
+
+                    <p>
+                        Pilot instability estimation evaluates behavioural control patterns.
+                    </p>
+
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-number">05</div>
-                    Authority scaling selectively modifies control response
+
+                <div class="flow-card reveal">
+
+                    <h2>05</h2>
+
+                    <p>
+                        Adaptive authority scaling selectively modifies unstable control input.
+                    </p>
+
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-number">06</div>
-                    Stabilized commands are executed by the aircraft
+
+                <div class="flow-card reveal">
+
+                    <h2>06</h2>
+
+                    <p>
+                        Stabilized control commands are executed by the aircraft platform.
+                    </p>
+
                 </div>
 
             </div>
@@ -196,7 +224,7 @@
         <section
             class="section"
             style="
-                padding-top: 60px;
+                padding-top: 80px;
                 padding-bottom: 100px;
             "
         >
@@ -217,7 +245,7 @@
     </div>
 
 
-    <!-- SCROLL SCRIPT -->
+    <!-- REVEAL SCRIPT -->
     <script>
 
         window.addEventListener("load", () => {
