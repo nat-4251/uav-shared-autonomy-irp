@@ -136,3 +136,27 @@ Part F: Comparative analysis using stability metrics.
 
 **(2026-05-22)**
 - Developed the preliminary web interface and research presentation framework, including interactive architectural visualization, telemetry-system documentation layouts and technical project communication infrastructure.
+
+**(2026-05-23 to 2026-05-24)**
+- Conducted independent avionics integration research for the implementation of a new flight controller on an existing RC aircraft platform.
+- Investigated electrical and signal compatibility between legacy subsystems and the new flight controller architecture.
+- Researched interfacing methods for control surfaces, servo actuators, ESCs, propulsion motors, and radio receivers.
+- Analyzed PWM/UART signal routing, onboard power distribution, and wiring topology requirements.
+- Studied subsystem synchronization and communication pathways required for stable aircraft operation.
+- Evaluated structural and spatial constraints associated with integrating additional onboard avionics hardware.
+- Researched installation logistics for a CAAS-compliant Broadcast Remote Identification (B-RID) module.
+- Investigated B-RID power requirements, antenna positioning, mounting considerations, and system-level integration constraints.
+- Considered electromagnetic interference mitigation and overall avionics layout optimization during integration planning.
+- Reviewed operational and regulatory compliance requirements associated with B-RID implementation on unmanned aircraft systems.
+
+**(2026-05-25)**
+- Conducted propulsion system integration and compatibility testing involving the installation of a 2217-series brushless outrunner motor onto a pre-existing aircraft motor mount.
+- Evaluated mounting geometry, shaft alignment, vibration considerations, and structural compatibility with the existing airframe.
+- Performed iterative propulsion optimization research after preliminary analysis suggested that the initial 2217–950KV motor configuration would provide insufficient thrust when paired with an 8060 propeller.
+- Investigated the effects of motor KV rating and propeller dimensions on static thrust generation, efficiency, and overall flight performance.
+- Reviewed propulsion test data and community performance benchmarks indicating that lower-KV 950KV-class motors are generally optimized for larger-diameter propellers and lower-RPM operation.
+- Determined through further research that the projected thrust output and thrust-to-weight ratio of the 2217–950KV + 8060 configuration would likely be inadequate for the intended aircraft performance envelope.
+
+**(2026-05-26)**
+- Subsequently transitioned to a similar 2217–1250KV motor configuration while retaining the 8060 propeller setup to achieve higher RPM and improved thrust characteristics within the existing airframe constraints.
+- Evaluated the revised propulsion setup with consideration for ESC loading, power consumption, propeller efficiency, and expected flight dynamics.
