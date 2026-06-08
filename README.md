@@ -160,3 +160,14 @@ Part F: Comparative analysis using stability metrics.
 **(2026-05-26)**
 - Subsequently transitioned to a similar 2217–1250KV motor configuration while retaining the 8060 propeller setup to achieve higher RPM and improved thrust characteristics within the existing airframe constraints.
 - Evaluated the revised propulsion setup with consideration for ESC loading, power consumption, propeller efficiency, and expected flight dynamics.
+
+**(2026-06-07)**
+- Installed and configured INAV firmware on the Matek F405 V2 flight controller.
+- Calibrated onboard sensors, including the accelerometer and compass, to ensure accurate attitude and heading estimation.
+- Evaluated the structural integrity and performance of the initial motor mount design under expected operational loads.
+- Identified deficiencies in the original motor mount, including inadequate strength, rigidity, and vibration resistance.
+- Developed design requirements for an improved motor mounting system based on the identified limitations.
+- Designed and fabricated a new motor mount from scratch to meet the revised structural and performance criteria.
+- Integrated the redesigned motor mount into the aircraft and verified its suitability through ground testing and structural inspection.
+- Assessed the effectiveness of the redesigned mount in reducing vibration and improving motor support during operation.
+
