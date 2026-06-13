@@ -171,3 +171,19 @@ Part F: Comparative analysis using stability metrics.
 - Integrated the redesigned motor mount into the aircraft and verified its suitability through ground testing and structural inspection.
 - Assessed the effectiveness of the redesigned mount in reducing vibration and improving motor support during operation.
 
+**(2026-06-08)**
+- Soldered and integrated the required header pin interfaces onto the Matek F405V2 flight controller, enabling electrical connectivity with the avionics subsystem.
+
+**(2026-06-09)**
+- Performed functional integration of the flight controller and associated electronic components within the airframe structure.
+- Conducted a maintainability assessment following system installation and identified insufficient accessibility to internal electronic components due to the absence of a dedicated maintenance access point.
+- Evaluated alternative equipment layouts to improve serviceability and reduce maintenance complexity.
+
+**(2026-06-12)**
+- Reconfigured the internal arrangement of avionics and power distribution components to enhance accessibility for inspection, troubleshooting, and component replacement.
+- Validated the revised installation to ensure continued structural integrity, system functionality, and ease of maintenance.
+- Conducted comprehensive ground testing to verify flight controller functionality, electronic subsystem integration, control surface response, and overall system operability prior to flight testing.
+
+
+  
+
